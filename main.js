@@ -20,7 +20,7 @@ function MostrarTarjeta() {
   const contenedor = document.getElementById("contenidotarjetas");
   contenedor.innerHTML = "";
 
-  for (let i = -1; i <= 1; i++) {
+  for (let i = -2; i <= 2; i++) {
     const pos = (indice + i + datos.length) % datos.length;
     const cliente = datos[pos];
     if (!cliente) continue;
@@ -28,9 +28,9 @@ function MostrarTarjeta() {
     card.className = "card";
     if (i === 0) card.classList.add("tarjetaprincipal");
 
-    card.innerHTML = `
-  <h3>${cliente.nombre}</h3>
-  <a href="${cliente.pagina}" target="_blank">${cliente.pagina}</a>
+    card.innerHTML = `<h3 class="nombrecliente">${cliente.nombre}</h3>
+     
+    
   ${
     cliente.imagen
       ? `<img src="${cliente.imagen}" alt="${cliente.nombre}" class="imagen-cliente">`
